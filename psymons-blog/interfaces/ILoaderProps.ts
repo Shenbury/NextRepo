@@ -1,0 +1,3 @@
+interface ILoaderProps{
+  show: boolean
+}
