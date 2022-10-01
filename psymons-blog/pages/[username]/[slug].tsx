@@ -1,10 +1,7 @@
-import type { NextPage } from 'next'
+import type { NextPage } from "next";
 
 const PostPage: NextPage = ({}) => {
-  return (
-    <main>
-    </main>
-  )
-}
+  return <main></main>;
+};
 
-export default PostPage
+export default PostPage;
