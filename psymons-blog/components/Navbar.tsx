@@ -1,9 +1,9 @@
 import Link from "next/link";
-import Loader from "./Loader";
+import { useContext } from "react";
+import { UserContext } from "../lib/context";
 
-export default function Navbar() {
-  const user = null;
-  const username = null;
+export default function Navbar() : JSX.Element {
+  const { user, username } = useContext(UserContext)
 
   return (
     <nav className="navbar">
@@ -23,12 +23,12 @@ export default function Navbar() {
             </li>
             <li>
               <Link href={`/${username}`}>
-                <img src={user?.photoUrl} />
+              <img src={user?.photoURL === null ? undefined : user?.photoURL } />
               </Link>
             </li>
           </>
         )}
-        ss
+        Psymons Blog
         {/* User is not signed in OR has not created username*/}
         {!username && (
           <>
