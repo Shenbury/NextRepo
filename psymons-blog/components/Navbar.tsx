@@ -2,8 +2,8 @@ import Link from "next/link";
 import Loader from "./Loader";
 
 export default function Navbar() {
-  const user = true;
-  const username = true;
+  const user = null;
+  const username = null;
 
   return (
     <nav className="navbar">
@@ -13,7 +13,6 @@ export default function Navbar() {
             <button className="btn-logo">Feed</button>
           </Link>
         </li>
-
         {/* User is signed-in and has username*/}
         {username && (
           <>
@@ -29,7 +28,7 @@ export default function Navbar() {
             </li>
           </>
         )}
-
+        ss
         {/* User is not signed in OR has not created username*/}
         {!username && (
           <>
