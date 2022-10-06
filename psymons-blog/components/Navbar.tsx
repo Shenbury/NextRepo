@@ -1,9 +1,15 @@
 import Link from "next/link";
+import router from "next/router";
 import { useContext } from "react";
 import { UserContext } from "../lib/context";
+import { auth } from "../lib/firebase";
 
 export default function Navbar() : JSX.Element {
   const { user, username } = useContext(UserContext)
+  const signOut =  () => {
+    auth.signOut();
+    router.reload();
+  }
 
   return (
     <nav className="navbar">
@@ -16,6 +22,9 @@ export default function Navbar() : JSX.Element {
         {/* User is signed-in and has username*/}
         {username && (
           <>
+            <li className="push-left">
+              <button onClick={signOut}>Sign Out</button>
+            </li>
             <li>
               <Link href="/Admin">
                 <button className="btn-blue">Write Posts</button>
