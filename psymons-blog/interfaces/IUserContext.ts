@@ -1,6 +1,6 @@
 import { User } from "firebase/auth";
 
 export interface IUserContext {
-    user: User | null;
-    username: string;
+    user: User | null | undefined;
+    username: string | null;
   }

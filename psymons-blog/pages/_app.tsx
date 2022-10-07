@@ -5,11 +5,14 @@ import { Toaster } from "react-hot-toast";
 import { UserContext } from "../lib/context";
 import { IUserContext } from "../interfaces/IUserContext";
 import { defaultConfig } from "next/dist/server/config-shared";
+import { useUserData } from "../lib/hooks";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const userData = useUserData();
+
   const currentUserContext: IUserContext = {
-    user: {},
-    username: "Psymon",
+    user: userData.user,
+    username: userData.username,
   };
 
   return (
